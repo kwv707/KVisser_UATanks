@@ -7,7 +7,7 @@ public class EnemyAI : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Bullet")
+        if (collision.gameObject.tag == "Bullet")  // 
         {
           if (gameObject.tag == "Big Boy")
           {
@@ -20,7 +20,7 @@ public class EnemyAI : MonoBehaviour
 
     void bigBoy()
     {
-        
+        Debug.Log("hello world");
     }
 
 

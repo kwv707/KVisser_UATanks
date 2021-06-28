@@ -15,7 +15,7 @@ public class TankData : MonoBehaviour
 
     // Tank Stats
     public float FireRate = 50.0f;
-    public float ProjectileSpeed = 1200f;
+    public float ProjectileSpeed = 25f;
     public Rigidbody projectile;
 
 

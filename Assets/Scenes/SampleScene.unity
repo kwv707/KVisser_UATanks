@@ -2833,7 +2833,7 @@ MonoBehaviour:
   turnSpeed: 450
   maxHealth: 100
   FireRate: 5
-  ProjectileSpeed: 25
+  ProjectileSpeed: 45
   projectile: {fileID: 7778920535168317183, guid: 4b5fa1c1102e6c846aa96b5a29b80910, type: 3}
 --- !u!114 &1827839066
 MonoBehaviour:
