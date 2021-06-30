@@ -56,8 +56,7 @@ public class PlayerController : MonoBehaviour
         float moveforward = Input.GetAxis("Vertical");
         moveDirection = new Vector3(0, 0, moveforward); 
             moveDirection *= data.moveSpeed;
-        moveDirection = transform.TransformDirection(moveDirection);
-
+            moveDirection = transform.TransformDirection(moveDirection);        // 
 
         CharacterController.Move(moveDirection * Time.deltaTime);
 

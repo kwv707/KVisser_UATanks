@@ -347,6 +347,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3200264630857e46b6159a23db8b6b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
+  AiController: {fileID: 0}
+  waypoints: []
+  closeEnough: 1
 --- !u!54 &100843371
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -856,6 +860,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3200264630857e46b6159a23db8b6b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
+  AiController: {fileID: 0}
+  waypoints: []
+  closeEnough: 1
 --- !u!135 &612935126
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1057,6 +1065,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3200264630857e46b6159a23db8b6b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
+  AiController: {fileID: 0}
+  waypoints: []
+  closeEnough: 1
 --- !u!135 &708046188
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1242,6 +1254,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3200264630857e46b6159a23db8b6b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
+  AiController: {fileID: 0}
+  waypoints: []
+  closeEnough: 1
 --- !u!1 &831604382 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1004181919771082531, guid: 056d2c1efd454a645a6821f5f7ac9f90, type: 3}
@@ -1300,6 +1316,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3200264630857e46b6159a23db8b6b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
+  AiController: {fileID: 0}
+  waypoints: []
+  closeEnough: 1
 --- !u!135 &868623804
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1501,6 +1521,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3200264630857e46b6159a23db8b6b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
+  AiController: {fileID: 0}
+  waypoints: []
+  closeEnough: 1
 --- !u!1 &1178324135
 GameObject:
   m_ObjectHideFlags: 0
@@ -2340,6 +2364,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d3200264630857e46b6159a23db8b6b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data: {fileID: 0}
+  AiController: {fileID: 0}
+  waypoints: []
+  closeEnough: 1
 --- !u!54 &1419950819
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2868,22 +2896,6 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0, z: 0}
---- !u!54 &1827839068
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1827839064}
-  serializedVersion: 2
-  m_Mass: 500
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1854578699
 GameObject:
   m_ObjectHideFlags: 0
@@ -3029,12 +3041,16 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 408717463276855407, guid: 056d2c1efd454a645a6821f5f7ac9f90, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 408717463276855407, guid: 056d2c1efd454a645a6821f5f7ac9f90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.197
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 408717463276855407, guid: 056d2c1efd454a645a6821f5f7ac9f90, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.015319824
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 408717463276855407, guid: 056d2c1efd454a645a6821f5f7ac9f90, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3130,11 +3146,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7282020393809007460, guid: 056d2c1efd454a645a6821f5f7ac9f90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.6549597
+      value: -1.45
       objectReference: {fileID: 0}
     - target: {fileID: 7282020393809007460, guid: 056d2c1efd454a645a6821f5f7ac9f90, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.3799708
+      value: -0.24
       objectReference: {fileID: 0}
     - target: {fileID: 7282020393809007460, guid: 056d2c1efd454a645a6821f5f7ac9f90, type: 3}
       propertyPath: m_LocalRotation.w

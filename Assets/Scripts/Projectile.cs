@@ -6,10 +6,10 @@ public class Projectile : MonoBehaviour
 {
     
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider collider)
     {
         
-        if (collision.gameObject.tag != "Bullet" && collision.gameObject.tag != "Player" )
+        if (collider.gameObject.tag != "Bullet" && collider.gameObject.tag != "Player" )
         {
                         
             Destroy(gameObject);
