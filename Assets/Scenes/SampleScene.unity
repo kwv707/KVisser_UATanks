@@ -1282,7 +1282,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data: {fileID: 1827839065}
   cam: {fileID: 342156183}
-  projectile: {fileID: 286573563932112943, guid: 4b5fa1c1102e6c846aa96b5a29b80910, type: 3}
   firepoint: {fileID: 831604383}
 --- !u!1 &868623801
 GameObject:
@@ -3126,11 +3125,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1840625663621803919, guid: 056d2c1efd454a645a6821f5f7ac9f90, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.205
+      value: 0.374
       objectReference: {fileID: 0}
     - target: {fileID: 1840625663621803919, guid: 056d2c1efd454a645a6821f5f7ac9f90, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.254
+      value: -0.192
       objectReference: {fileID: 0}
     - target: {fileID: 1840625663621803919, guid: 056d2c1efd454a645a6821f5f7ac9f90, type: 3}
       propertyPath: m_LocalRotation.w

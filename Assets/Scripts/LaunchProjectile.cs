@@ -8,18 +8,17 @@ public class LaunchProjectile : MonoBehaviour
 
     public TankData data;
     public Camera cam;
-    public GameObject projectile;
     public Transform firepoint;
     
     
     private float timeToFire;
 
-    private Vector3 destination;
+
 
     // Start is called before the first frame update
     void Start()
     {
-        Physics.gravity = new Vector3(0, -1.0F, 0);
+        
 
     }
 
@@ -38,16 +37,7 @@ public class LaunchProjectile : MonoBehaviour
     void fireRound()
     {
 
-        Ray ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0));
-
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit))
-        {
-            destination = hit.point;
-        }
-        else
-            destination = ray.GetPoint(3000);
+        
 
         InstantiateProjectile();
 
@@ -56,8 +46,9 @@ public class LaunchProjectile : MonoBehaviour
     void InstantiateProjectile()
     {
 
-        var projectileObject = Instantiate(projectile, firepoint.position, Quaternion.identity) as GameObject;
-        projectileObject.GetComponent<Rigidbody>().velocity = (destination - firepoint.position).normalized * data.ProjectileSpeed;
+        data.projectile = Instantiate(data.projectile, firepoint.position, Quaternion.identity);
+        data.projectile.AddForce(transform.up,ForceMode.Force);
+
 
     }
 

@@ -75,8 +75,10 @@ public class PlayerController : MonoBehaviour
     private void Rotate()
     {
         float lookAround = Input.GetAxis("Mouse X") * data.turnSpeed * Time.deltaTime;
+        float lookUpDown = Input.GetAxis("Mouse Y") * data.turnSpeed * Time.deltaTime;
 
         transform.Rotate(Vector3.up, lookAround);
+        transform.Rotate(new Vector3(Mathf.Clamp(lookUpDown, 45 , 45), 0, 0));
 
     }
 
