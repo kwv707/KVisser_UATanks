@@ -8,15 +8,17 @@ public class TankData : MonoBehaviour
     public float moveSpeed = 5f;
     public float turnSpeed = 14f;
 
+
     // Player Stats
     private float currentHealth = 75f;
     [SerializeField] private float maxHealth = 100f;
 
 
+
     // Tank Stats
     public float FireRate = 50.0f;
     public float ProjectileSpeed = 25f;
-    public Rigidbody projectile;
+
 
 
     // Start is called before the first frame update

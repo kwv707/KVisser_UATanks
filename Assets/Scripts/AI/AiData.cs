@@ -5,8 +5,8 @@ using UnityEngine;
 public class AiData : MonoBehaviour
 {
 
-    [SerializeField] private float moveSpeed = 0;
-    [SerializeField] private float turnSpeed = 0;
+     public float moveSpeed = 0;
+     public float turnSpeed = 0;
 
 
 

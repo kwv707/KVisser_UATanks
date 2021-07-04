@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 
 
 public class PlayerController : MonoBehaviour
@@ -10,25 +10,13 @@ public class PlayerController : MonoBehaviour
 
     public TankData data;
     
-    float  haxis;
-
     public float gravity = 3.0f;
 
+    private float timeToFire;
+    public Rigidbody projectile;
+    public Transform firepoint;
 
     Vector3 moveDirection;
-    Vector3 rotateVector;
-
-
-    public void OnMove(InputAction.CallbackContext context)
-    {
-        //mMove = context.ReadValue<Vector2>();
-    }
-
-    public void OnLook(InputAction.CallbackContext context)
-    {
-        //mLook = context.ReadValue<Vector2>();
-    }
-
 
 
     // Start is called before the first frame update
@@ -37,7 +25,7 @@ public class PlayerController : MonoBehaviour
 
         CharacterController = GetComponent<CharacterController>();
         Physics.gravity = new Vector3(0, -1.0F, 0);
-
+        projectile = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -48,6 +36,12 @@ public class PlayerController : MonoBehaviour
         
         Move();
         Rotate();
+
+        if (Input.GetButton("Fire1") /*&& Time.time >= timeToFire*/)
+        {
+            timeToFire = Time.time + 1 / data.FireRate;
+            fireRound();
+        }
     }
 
 
@@ -77,11 +71,21 @@ public class PlayerController : MonoBehaviour
         float lookAround = Input.GetAxis("Mouse X") * data.turnSpeed * Time.deltaTime;
         float lookUpDown = Input.GetAxis("Mouse Y") * data.turnSpeed * Time.deltaTime;
 
-        transform.Rotate(Vector3.up, lookAround);
-        transform.Rotate(new Vector3(Mathf.Clamp(lookUpDown, 45 , 45), 0, 0));
+        Vector3 rotateVector = Vector3.up * lookAround;
+
+        transform.Rotate(rotateVector, Space.Self);
 
     }
 
+    void fireRound()
+    {
+
+        projectile = Instantiate(projectile, firepoint.position, Quaternion.identity);
+        projectile.AddRelativeForce(Vector3.forward * data.ProjectileSpeed);
+
+
+
+    }
 
 
 
