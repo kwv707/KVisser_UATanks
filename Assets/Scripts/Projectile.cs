@@ -4,7 +4,17 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    
+    public Rigidbody projectile;
+
+
+
+    private void Awake()
+    {
+
+        projectile = GetComponent<Rigidbody>();
+        
+   }
+
 
     private void OnTriggerEnter(Collider collider)
     {

@@ -13,8 +13,10 @@ public class PlayerController : MonoBehaviour
     public float gravity = 3.0f;
 
     private float timeToFire;
-    public Rigidbody projectile;
+    
     public Transform firepoint;
+
+    public Rigidbody projectile;
 
     Vector3 moveDirection;
 
@@ -25,7 +27,7 @@ public class PlayerController : MonoBehaviour
 
         CharacterController = GetComponent<CharacterController>();
         Physics.gravity = new Vector3(0, -1.0F, 0);
-        projectile = GetComponent<Rigidbody>();
+        
         Cursor.lockState = CursorLockMode.Locked;
     }
 
@@ -37,15 +39,17 @@ public class PlayerController : MonoBehaviour
         Move();
         Rotate();
 
-        if (Input.GetButton("Fire1") /*&& Time.time >= timeToFire*/)
+
+
+        if (Input.GetButton("Fire1") && Time.time >= timeToFire)
         {
-            timeToFire = Time.time + 1 / data.FireRate;
+            timeToFire = Time.time + 1 / data.ROF_RateofFire_sec;
             fireRound();
         }
     }
 
 
-    private void Move()
+    void Move()
     {
         float moveforward = Input.GetAxis("Vertical");
         moveDirection = new Vector3(0, 0, moveforward); 
@@ -66,22 +70,26 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    private void Rotate()
+    void Rotate()
     {
-        float lookAround = Input.GetAxis("Mouse X") * data.turnSpeed * Time.deltaTime;
-        float lookUpDown = Input.GetAxis("Mouse Y") * data.turnSpeed * Time.deltaTime;
+       // data.turnSpeed = Input.GetButtonDown(KeyCode.D);
+        
 
-        Vector3 rotateVector = Vector3.up * lookAround;
+        Vector3 rotateVector = Vector3.up * data.turnSpeed * Time.deltaTime;
 
         transform.Rotate(rotateVector, Space.Self);
 
     }
 
+    
+
     void fireRound()
     {
 
-        projectile = Instantiate(projectile, firepoint.position, Quaternion.identity);
-        projectile.AddRelativeForce(Vector3.forward * data.ProjectileSpeed);
+        Debug.Log("Pew Pew");
+        Rigidbody Bullet;
+        Bullet = Instantiate(projectile, firepoint.position, transform.rotation);
+        Bullet.velocity = transform.TransformDirection(Vector3.forward * data.ProjectileSpeed);
 
 
 

@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        enemyLocator();
+       // enemyLocator();
     }
 
     private void overLordManager()
