@@ -1,16 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
-
+using static AiData;
 
 public class AIController : MonoBehaviour
 {
     CharacterController CharacterController;
     private Transform Aitrans;
     public Transform[] waypoints;
-    GameObject enemy;
-    
+    public Transform target;
+    public AttackMode attackMode;
 
 
     public AiData AiData;
@@ -34,25 +33,57 @@ public class AIController : MonoBehaviour
 
     private void Start()
     {
-        
         Physics.gravity = new Vector3(0, -1.0F, 0);
-
-
-
-
     }
     void Update()
     {
+        AiMovementSystem();
         AiWaypointSystem();
     }
 
+   
+    void AiMovementSystem()
+    {
+
+        switch(attackMode)
+        {
+
+            case AttackMode.Chase:
+                RotateTowards(target.position, AiData.turnSpeed);
+                Move(AiData.moveSpeed);
+                break;
+
+            case AttackMode.Flee:
+
+                Vector3 TargetVector = target.position - Aitrans.position;
+
+                // We can flip this vector by -1 to get a vector AWAY from our target
+                Vector3 DistToTargetVector = -1 * TargetVector;
+
+                // Now, we can normalize that vector to give it a magnitude of 1
+                DistToTargetVector.Normalize();
+
+                // A normalized vector can be multiplied by a length to make a vector of that length.
+                DistToTargetVector *= AiData.fleeDist;
+
+                // We can find the position in space we want to move to by adding our vector away from our AI to our AI's position.
+                //     This gives us a point that is "that vector away" from our current position.
+                Vector3 fleePosition = DistToTargetVector + Aitrans.position;
+                RotateTowards(fleePosition, AiData.turnSpeed);
+                Move(AiData.moveSpeed);
+                break;
+
+        }
+     
+
+    }
+    
+    
+    
+    
     void AiWaypointSystem()
     {
-        
-        
-
-
-            if (RotateTowards(waypoints[curWay].position, AiData.turnSpeed))
+        if (RotateTowards(waypoints[curWay].position, AiData.turnSpeed))
             {
                 // Empty Space
             }

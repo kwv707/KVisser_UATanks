@@ -11,6 +11,9 @@ public class AiData : MonoBehaviour
     public enum LoopType { Stop, Loop, PingPong };
     public LoopType loopType;
 
+    public enum AttackMode { Chase, Flee};
+    public float fleeDist = 1.0f;
+
 
 
 }
