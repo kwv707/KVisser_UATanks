@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
- 
     public static GameManager instance;
+    public List<PlayerController> players;
+    public List<SpawnPoint> SpawnLocations;
+    public List<Scores> ScoreData;
+    public Room[,] grid;
+    public GameObject startingplayer;
+    
+     
 
 
-    GameObject[] enemyAI;
-    public bool totalEnemy = false;
-
-
-    // Runs before any Start() functions run
     void Awake()
     {
         overLordManager();
@@ -21,10 +22,15 @@ public class GameManager : MonoBehaviour
         
     }
 
+    public void Start()
+    {
+        
+        SpawnPlayer();
+    }
 
     private void Update()
     {
-       // enemyLocator();
+        
     }
 
     private void overLordManager()
@@ -40,40 +46,21 @@ public class GameManager : MonoBehaviour
         }
     }
 
-
-    public void enemyLocatorRanged()
-    {
-        GameObject closest = null;
-        float distance = 5000;
-        Vector3 position = transform.position;
-        foreach (GameObject go in enemyAI)
-        {
-            Vector3 diff = go.transform.position - position;
-            float curDistance = diff.sqrMagnitude;
-            if (curDistance < distance)
-            {
-                closest = go;
-                distance = curDistance;
-            }
-        }
-
-    }
-
-    public void enemyLocator()
+ public void SpawnPlayer()
     {
         
-        enemyAI = GameObject.FindGameObjectsWithTag("Enemy");
+        
+        // grabs a random spawn location and places it into spawn
+        int spawn = Random.Range(0, SpawnLocations.Count);
+        
+        // places our character at the random spawn location selected randomly
+        GameObject.Instantiate(startingplayer, SpawnLocations[spawn].transform.position, Quaternion.identity);   
 
-        if (enemyAI.Length == 0)
-        {
-            Debug.Log("No Enemies Located");
-        }
 
-        if(totalEnemy == true)
-        {
-            
-            Debug.Log(enemyAI.Length);
-        }
     }
+
+
+
+
 
 }

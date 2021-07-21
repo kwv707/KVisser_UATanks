@@ -7,12 +7,15 @@ public class CameraController : MonoBehaviour
 
     TankData data;
 
-    private Transform parent;
+    public Camera Camera;
+
+
+    public bool MultiplayerMode;
 
     private void Start()
     {
-        parent = transform.parent;
-        Cursor.lockState = CursorLockMode.Locked;
+        
+        
     }
 
     private void Update()
@@ -22,9 +25,7 @@ public class CameraController : MonoBehaviour
 
     private void Rotate()
     {
-        float lookAround = Input.GetAxis("Mouse X") * data.turnSpeed * Time.deltaTime;
-
-        parent.Rotate(Vector3.up, lookAround);
+        
 
     }
 

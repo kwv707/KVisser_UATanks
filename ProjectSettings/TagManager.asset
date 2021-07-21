@@ -9,6 +9,10 @@ TagManager:
   - Enemy
   - Big Boy
   - Game Manager
+  - Maze Wall
+  - Powerup
+  - Spawn Point
+  - Waypoint
   layers:
   - Default
   - TransparentFX

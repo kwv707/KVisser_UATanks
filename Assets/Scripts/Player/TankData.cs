@@ -10,14 +10,13 @@ public class TankData : MonoBehaviour
 
 
     // Player Stats
-    private float currentHealth = 75f;
-    [SerializeField] private float maxHealth = 100f;
-
-
-
-    // Tank Stats
-    public float ROF_RateofFire_sec = 50.0f;
+    public float health = 100f;
+    public float maxHealth = 100f;
+    public float fireRate = 5f;
     public float ProjectileSpeed = 25f;
+
+    //Score System
+    [HideInInspector] public int PlayerScore;
 
 
 
@@ -32,4 +31,5 @@ public class TankData : MonoBehaviour
     {
         
     }
+    
 }
