@@ -43,4 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caaf050e4d085bd4f93c15da238ffb02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Player: {fileID: 100012, guid: 65e92f227846e794883569c427a9c4c3, type: 3}
+  PlayerOneSpawnZone: 1
+  PlayerTwoSpawnZone: 1
+  MultiplayerMode: 0
+  SinglePlayer: 1

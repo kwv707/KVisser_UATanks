@@ -284,7 +284,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   players: []
   SpawnLocations: []
-  startingplayer: {fileID: 100012, guid: 65e92f227846e794883569c427a9c4c3, type: 3}
+  ScoreData: []
+  PlayerOne: {fileID: 100012, guid: 65e92f227846e794883569c427a9c4c3, type: 3}
+  PlayerTwo: {fileID: 100012, guid: 0946b25854c1d89479a216f9bfec92f9, type: 3}
 --- !u!4 &1342000338
 Transform:
   m_ObjectHideFlags: 0

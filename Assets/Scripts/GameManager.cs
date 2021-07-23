@@ -9,9 +9,9 @@ public class GameManager : MonoBehaviour
     public List<SpawnPoint> SpawnLocations;
     public List<Scores> ScoreData;
     public Room[,] grid;
-    public GameObject startingplayer;
-    
-     
+    public GameObject PlayerOne;
+    public GameObject PlayerTwo;
+
 
 
     void Awake()
@@ -24,14 +24,24 @@ public class GameManager : MonoBehaviour
 
     public void Start()
     {
+
         
-        SpawnPlayer();
+        //ddddddddddddddddddddddddStartCoroutine(Delay());
+        
     }
 
     private void Update()
     {
         
     }
+
+    IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(1);
+        SpawnPlayer();
+    }
+
+
 
     private void overLordManager()
     {
@@ -46,15 +56,15 @@ public class GameManager : MonoBehaviour
         }
     }
 
- public void SpawnPlayer()
+    public void SpawnPlayer()
     {
-        
-        
+
+
         // grabs a random spawn location and places it into spawn
         int spawn = Random.Range(0, SpawnLocations.Count);
-        
+
         // places our character at the random spawn location selected randomly
-        GameObject.Instantiate(startingplayer, SpawnLocations[spawn].transform.position, Quaternion.identity);   
+        GameObject.Instantiate(PlayerOne, SpawnLocations[spawn].transform.position, Quaternion.identity);
 
 
     }

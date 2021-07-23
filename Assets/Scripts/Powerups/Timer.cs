@@ -14,7 +14,7 @@ public class Timer : MonoBehaviour
     
  void Start()
     {
-        nextSpawnTime = Time.time + spawnDelay;
+        
     }
 
     void Update()
@@ -29,11 +29,14 @@ public class Timer : MonoBehaviour
                 spawnedPickup = Instantiate(spawnedPickup, transform.position, Quaternion.identity) as GameObject;
                 nextSpawnTime = Time.time + spawnDelay;
             }
-        }
-        else
-        {
+       
+            else
+            {
             // Otherwise, the object still exists, so postpone the spawn
             nextSpawnTime = Time.time + spawnDelay;
+            }
+        
         }
+        
     }
 }
