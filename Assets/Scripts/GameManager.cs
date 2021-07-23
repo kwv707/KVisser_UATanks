@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     public Room[,] grid;
     public GameObject PlayerOne;
     public GameObject PlayerTwo;
+    [HideInInspector] public bool isSinglePlayerMode = true;
 
 
 
@@ -26,7 +27,7 @@ public class GameManager : MonoBehaviour
     {
 
         
-        //ddddddddddddddddddddddddStartCoroutine(Delay());
+        //StartCoroutine(Delay());
         
     }
 

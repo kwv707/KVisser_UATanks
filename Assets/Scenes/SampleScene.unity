@@ -5162,6 +5162,14 @@ PrefabInstance:
       value: Player One Spawn
       objectReference: {fileID: 0}
     - target: {fileID: 8885521233740206064, guid: 2135a5cdbbb369546b6342bd4c2d9b77, type: 3}
+      propertyPath: SinglePlayer
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885521233740206064, guid: 2135a5cdbbb369546b6342bd4c2d9b77, type: 3}
+      propertyPath: MultiplayerMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885521233740206064, guid: 2135a5cdbbb369546b6342bd4c2d9b77, type: 3}
       propertyPath: PlayerOneSpawnZone
       value: 1
       objectReference: {fileID: 0}
@@ -5700,6 +5708,7 @@ MonoBehaviour:
   ScoreData: []
   PlayerOne: {fileID: 100012, guid: 65e92f227846e794883569c427a9c4c3, type: 3}
   PlayerTwo: {fileID: 100012, guid: 0946b25854c1d89479a216f9bfec92f9, type: 3}
+  isSinglePlayerMode: 1
 --- !u!4 &1259317267
 Transform:
   m_ObjectHideFlags: 0
@@ -8832,6 +8841,10 @@ PrefabInstance:
     - target: {fileID: 8885521233740206064, guid: 2135a5cdbbb369546b6342bd4c2d9b77, type: 3}
       propertyPath: SinglePlayer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8885521233740206064, guid: 2135a5cdbbb369546b6342bd4c2d9b77, type: 3}
+      propertyPath: MultiplayerMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8885521233740206064, guid: 2135a5cdbbb369546b6342bd4c2d9b77, type: 3}
       propertyPath: PlayerOneSpawnZone
