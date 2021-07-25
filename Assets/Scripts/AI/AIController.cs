@@ -9,7 +9,7 @@ using static AiData;
 public class AIController : MonoBehaviour
 {
     CharacterController CharacterController;
-    
+    TankData player;
     // Hidden in the Inspector
     //public GameObject target;
     [HideInInspector]public Projectile projectileData;
@@ -73,10 +73,12 @@ public class AIController : MonoBehaviour
 
     private void OnTriggerEnter(Collider collider)
     {
+        Debug.Log("Ai Has Been Hit...");
         if(collider.gameObject.CompareTag("Bullet"))
         {
-            AiData.Health -= 10f;
-            print(AiData.Health);
+            AiData.Health = AiData.Health - GameManager.instance.players[0].data.projectileDamage;
+            Debug.Log(AiData.Health);
+            Debug.Log("Ai Hit");
         }
     }
 

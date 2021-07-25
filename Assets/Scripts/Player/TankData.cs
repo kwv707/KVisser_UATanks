@@ -14,6 +14,12 @@ public class TankData : MonoBehaviour
     public float maxHealth = 100f;
     public float fireRate = 5f;
     public float ProjectileSpeed = 25f;
+    public float projectileDamage = 15f;
+    public bool heavyDamage = false;
+    public float HeavyAmmoAmount = 30;
+
+
+    [HideInInspector]public bool isDead = false;
 
     //Score System
     [HideInInspector] public int PlayerScore;

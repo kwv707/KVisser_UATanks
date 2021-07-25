@@ -27,7 +27,7 @@ public class MapGenerator : MonoBehaviour
     void Start()
     {
         
-        mapSeed = DateToInt(DateTime.Now.Date);
+        
 
         GenerateGrid();
     }
@@ -44,13 +44,16 @@ public class MapGenerator : MonoBehaviour
     {
         if (MapOfTheDay)
         {
-            UnityEngine.Random.InitState(mapSeed);
+            UnityEngine.Random.InitState(DateToInt(DateTime.Now));
         }
         if(RandoMapMode)
         {
-           UnityEngine.Random.InitState(DateToInt(DateTime.Now)); 
+           UnityEngine.Random.InitState(DateToInt(DateTime.Now)*3); 
         }
-        
+        else
+        {
+            UnityEngine.Random.InitState(mapSeed);
+        }
         
 
         // Clear out the grid
@@ -66,18 +69,23 @@ public class MapGenerator : MonoBehaviour
                 float xPosition = roomWidth * j;
                 float zPosition = roomHeight * i;
                 Vector3 newPosition = new Vector3(xPosition, 0.0f, zPosition);
+                
 
                 // Create a new grid at the appropriate location
-                GameObject RoomCreated = Instantiate(RandomRoomGen(), newPosition, Quaternion.identity) as GameObject;
+                GameObject RoomCreated = Instantiate(RandomRoomGen(), newPosition, Quaternion.identity ) as GameObject;
 
                 // Set its parent
                 RoomCreated.transform.parent = this.transform;
+                
 
                 // Give it a meaningful name
                 RoomCreated.name = "Grid Section_" + j + "," + i;
 
+                
+
                 // Get the room object
                 Room RoomSection = RoomCreated.GetComponent<Room>();
+                
 
                 // Open the doors
                 // If we are on the bottom row, open the north door
@@ -95,6 +103,7 @@ public class MapGenerator : MonoBehaviour
                     // Otherwise, we are in the middle, so open both doors
                     RoomSection.doorNorth.SetActive(false);
                     RoomSection.doorSouth.SetActive(false);
+                    
                 }
                 // If we are on the first column, open the east door
                 if (j == 0)
@@ -111,6 +120,7 @@ public class MapGenerator : MonoBehaviour
                     // Otherwise, we are in the middle, so open both doors
                     RoomSection.doorEast.SetActive(false);
                     RoomSection.doorWest.SetActive(false);
+                    
                 }
                 // Save it to the grid array
                 GameManager.instance.grid[j, i] = RoomSection;
@@ -121,6 +131,7 @@ public class MapGenerator : MonoBehaviour
  
     public GameObject RandomRoomGen()
     {
+
         return rooms[UnityEngine.Random.Range(0, rooms.Length)];
     }
 }

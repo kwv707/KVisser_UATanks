@@ -7,7 +7,7 @@ public class Timer : MonoBehaviour
 
     public GameObject spawnedPickup;
     public float spawnDelay;
-    private float nextSpawnTime;
+    [HideInInspector]public float nextSpawnTime;
     
 
 
@@ -25,6 +25,7 @@ public class Timer : MonoBehaviour
             // And it is time to spawn
             if (Time.time > nextSpawnTime)
             {
+                print("inside pickup spawn");
                 // Spawn it and set the next time
                 spawnedPickup = Instantiate(spawnedPickup, transform.position, Quaternion.identity) as GameObject;
                 nextSpawnTime = Time.time + spawnDelay;

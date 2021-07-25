@@ -10,6 +10,7 @@ public class Powerup
 
     // Modifiers
     public float speedModifier;
+    public float turnModifier;
     public float healthModifier;
     public float maxHealthModifier;
     public float fireRateModifier;
@@ -21,6 +22,7 @@ public class Powerup
     public void OnActivate(TankData target)
     {
         target.moveSpeed += speedModifier;
+        target.turnSpeed += turnModifier;
         target.health += healthModifier;
         target.maxHealth += maxHealthModifier;
         target.fireRate += fireRateModifier;
@@ -29,6 +31,7 @@ public class Powerup
     public void OnDeactivate(TankData target)
     {
         target.moveSpeed -= speedModifier;
+        target.turnSpeed -= turnModifier;
         target.health -= healthModifier;
         target.maxHealth -= maxHealthModifier;
         target.fireRate -= fireRateModifier;

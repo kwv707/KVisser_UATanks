@@ -193,7 +193,7 @@ Transform:
   m_GameObject: {fileID: 408717464194769292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 548.1724, y: 0.53645, z: 390.6255}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children:
   - {fileID: 408717463276855407}
   m_Father: {fileID: 0}
@@ -211,20 +211,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00eb27482a584cb42a9ba671b16b1287, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 1
+  moveSpeed: 2
   turnSpeed: 180
   FireRate: 1
   ProjectileSpeed: 15
   loopType: 1
   Health: 100
   MaxHealth: 100
-  aiSenseRadius: 4
+  aiSenseRadius: 6
   stateEnterTime: 0
   HealingRate: 2
   avoidanceTime: 2
   fleeDist: 2
   fieldOfView: 45
-  maxViewDistance: 5
+  maxViewDistance: 10
+  PointsGiven: 0
 --- !u!114 &3645130788034440366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -252,14 +253,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c6c1ae4eff5821346922540207b19fc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
   projectileData: {fileID: 0}
   Aitrans: {fileID: 0}
   AiMotor: {fileID: 0}
   AiData: {fileID: 0}
   attackMode: 0
   waypoints: []
-  gameManager: {fileID: 0}
   firepoint: {fileID: 7282020393809007460}
   projectile: {fileID: 7778920535168317183, guid: 4b5fa1c1102e6c846aa96b5a29b80910, type: 3}
   closeEnough: 1

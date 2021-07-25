@@ -106,7 +106,6 @@ GameObject:
   - component: {fileID: 6007140334997163503}
   - component: {fileID: 6162831277367671876}
   - component: {fileID: 7474662312774337597}
-  - component: {fileID: 8287108235405982201}
   m_Layer: 0
   m_Name: Pickup Object
   m_TagString: Powerup
@@ -126,6 +125,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 788819823934383861}
+  - {fileID: 1491569535965648656}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -154,27 +154,46 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfe4b84b2a0d8fc4a874f403f7213706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextSpawnTime: 0
+  spawnDelay: 5
   powerup:
     isPermanent: 0
-    speedModifier: 15
-    healthModifier: 0
+    speedModifier: 0
+    turnModifier: 0
+    healthModifier: 50
     maxHealthModifier: 0
     fireRateModifier: 0
     healthBoost: 0
     duration: 15
   feedback: {fileID: 8300000, guid: b9b4a1d047e212842a8381688f5b463b, type: 3}
-  Timer: {fileID: 8287108235405982201}
---- !u!114 &8287108235405982201
-MonoBehaviour:
+  spawnedPickup: {fileID: 3781621371204023756}
+--- !u!1 &7020466167032557067
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3957129650956600194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddbc01aba14026f408fe298a5064de33, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnedPickup: {fileID: 3781621371204023756}
-  spawnDelay: 5
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1491569535965648656}
+  m_Layer: 0
+  m_Name: Area Light
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1491569535965648656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7020466167032557067}
+  m_LocalRotation: {x: 0.70406085, y: -0, z: -0, w: 0.71013963}
+  m_LocalPosition: {x: 0, y: 0.748, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6007140334997163503}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 89.507, y: 0, z: 0}
