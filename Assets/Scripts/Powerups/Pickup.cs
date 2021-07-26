@@ -8,35 +8,57 @@ public class Pickup : MonoBehaviour
 
     public float nextSpawnTime;
     public float spawnDelay;
-
+    private Transform tf;
     public Powerup powerup;
     public AudioClip feedback;
+    public GameObject pickupPrefab;
     public GameObject spawnedPickup;
-    //public float speedIncrease = 15f;
-    //public float speedDuration = 5f;
-
-
+    public bool isItemPickedUp;
+    
     public void Start()
     {
-        
+        tf = gameObject.GetComponent<Transform>();
+        nextSpawnTime = Time.time + spawnDelay;
+
+
+    }
+
+    
+    void Update()
+    {
+        // If it is there is nothing spawns
+        if (spawnedPickup == null)
+        {
+            // And it is time to spawn
+            if (Time.time > nextSpawnTime)
+            {
+                // Spawn it and set the next time
+                spawnedPickup = Instantiate(pickupPrefab, tf.position, Quaternion.identity) as GameObject;
+                nextSpawnTime = Time.time + spawnDelay;
+            }
+        }
+        else
+        {
+            // Otherwise, the object still exists, so postpone the spawn
+            nextSpawnTime = Time.time + spawnDelay;
+        }
     }
 
     public void OnTriggerEnter(Collider other)
     {
         // variable to store other object's PowerupController - if it has one
-        PowerupController powerPickup = other.GetComponent<PowerupController>();
+        PowerupController powCon = other.GetComponent<PowerupController>();
 
         // If the other object has a PowerupController
-        if (powerPickup != null)
+        if (powCon != null)
         {
             // Add the powerup
-            powerPickup.Add(powerup);
+            powCon.Add(powerup);
 
             // Play Feedback (if it is set)
             if (feedback != null)
             {
-                AudioSource.PlayClipAtPoint(feedback, transform.position, 1.0f);
-                nextSpawnTime = Time.time + spawnDelay;
+                AudioSource.PlayClipAtPoint(feedback, tf.position, 1.0f);
             }
 
             // Destroy this powerup
@@ -44,24 +66,5 @@ public class Pickup : MonoBehaviour
         }
     }
 
-
-    // If it is there is nothing spawns
-    public void Update()
-    {
-        if (Time.time > nextSpawnTime)
-        {
-            print("inside pickup spawn");
-            // Spawn it and set the next time
-            spawnedPickup = Instantiate(spawnedPickup, transform.position, Quaternion.identity) as GameObject;
-            
-        }
-        else
-        {
-            // Otherwise, the object still exists, so postpone the spawn
-            nextSpawnTime = Time.time + spawnDelay;
-        }
-        
-    }        
-        
 }
 

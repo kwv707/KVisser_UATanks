@@ -164,6 +164,7 @@ GameObject:
   - component: {fileID: 1342000338}
   - component: {fileID: 1342000337}
   - component: {fileID: 1342000339}
+  - component: {fileID: 1342000340}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Game Manager
@@ -187,9 +188,10 @@ MonoBehaviour:
   SpawnLocations: []
   ScoreData: []
   PlayerOne: {fileID: 100012, guid: 65e92f227846e794883569c427a9c4c3, type: 3}
+  SinglePlayer: {fileID: 100012, guid: a425400829d8de041a06fc0b8279ad22, type: 3}
   PlayerTwo: {fileID: 100012, guid: 0946b25854c1d89479a216f9bfec92f9, type: 3}
   isGamePaused: 0
-  isSinglePlayerMode: 1
+  isSinglePlayerMode: 0
 --- !u!4 &1342000338
 Transform:
   m_ObjectHideFlags: 0
@@ -216,9 +218,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9dd998fd9d715df4c96fddc4ed994516, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rows: 5
-  cols: 5
-  mapSeed: 10
+  rows: 4
+  cols: 4
+  mapSeed: 15
   rooms:
   - {fileID: 6039980472001049986, guid: 9d759b5b441d3f74285abb76bd9672a2, type: 3}
   - {fileID: 5630511068573248708, guid: b67e0ae96f9ed864698b05304c7fdb83, type: 3}
@@ -226,6 +228,14 @@ MonoBehaviour:
   - {fileID: 121816, guid: 8371d077d4da48c49b4a2661da4a3976, type: 3}
   MapOfTheDay: 1
   RandoMapMode: 0
+--- !u!81 &1342000340
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1342000336}
+  m_Enabled: 1
 --- !u!1 &1477812094
 GameObject:
   m_ObjectHideFlags: 0

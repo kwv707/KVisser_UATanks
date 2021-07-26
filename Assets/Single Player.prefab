@@ -356,7 +356,7 @@ GameObject:
   - component: {fileID: 5702902313847496408}
   - component: {fileID: 8565526704772659500}
   m_Layer: 0
-  m_Name: Player One
+  m_Name: Single Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -779,9 +779,9 @@ Camera:
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
-    y: 0.5
+    y: 0
     width: 1
-    height: 0.5
+    height: 1
   near clip plane: 0.3
   far clip plane: 1000
   field of view: 77
@@ -1131,22 +1131,6 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0.51277894
       objectReference: {fileID: 0}
-    - target: {fileID: 5176567126732423185, guid: bde8f4f54ffb1e54689da52a9c60315a, type: 3}
-      propertyPath: m_Color.a
-      value: 0.9647059
-      objectReference: {fileID: 0}
-    - target: {fileID: 5176567126732423185, guid: bde8f4f54ffb1e54689da52a9c60315a, type: 3}
-      propertyPath: m_Color.b
-      value: 0.58632964
-      objectReference: {fileID: 0}
-    - target: {fileID: 5176567126732423185, guid: bde8f4f54ffb1e54689da52a9c60315a, type: 3}
-      propertyPath: m_Color.g
-      value: 0.6792453
-      objectReference: {fileID: 0}
-    - target: {fileID: 5176567126732423185, guid: bde8f4f54ffb1e54689da52a9c60315a, type: 3}
-      propertyPath: m_Color.r
-      value: 0.66277725
-      objectReference: {fileID: 0}
     - target: {fileID: 5176567126732423191, guid: bde8f4f54ffb1e54689da52a9c60315a, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -1158,14 +1142,6 @@ PrefabInstance:
     - target: {fileID: 5176567128422402021, guid: bde8f4f54ffb1e54689da52a9c60315a, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8034250891743587177, guid: bde8f4f54ffb1e54689da52a9c60315a, type: 3}
-      propertyPath: Options
-      value: 
-      objectReference: {fileID: 0}
-    - target: {fileID: 8034250891743587177, guid: bde8f4f54ffb1e54689da52a9c60315a, type: 3}
-      propertyPath: MainMenu
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bde8f4f54ffb1e54689da52a9c60315a, type: 3}

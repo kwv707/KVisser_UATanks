@@ -17,12 +17,12 @@ public class SpawnPoint : MonoBehaviour
     // Start is called before the first frame update
     public void Awake()
     {
-         GameManager.instance.SpawnLocations.Add(this);
+         
     }
 
     private void Start()
     {
-        
+        GameManager.instance.SpawnLocations.Add(this);
         
        // StartCoroutine(Delay());
        // //StartCoroutine(POneChangeName());
